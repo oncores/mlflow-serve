@@ -12,7 +12,7 @@ if __name__ == "__main__":
     lr.fit(X, y)
     score = lr.score(X, y)
     print("Score: %s" % score)
-    mlflow.set_tracking_uri('localhost:5000/')
+    mlflow.set_tracking_uri('http://127.0.0.1:5000/')
     mlflow.start_run(experiment_id=0, run_name='dev_0714_sklearn')
     mlflow.log_metric("score", score)
     predictions = lr.predict(X)
